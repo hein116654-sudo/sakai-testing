@@ -1,0 +1,53 @@
+{
+    "common": {
+        "search_placeholder": "Search...",
+        "select_language": "Select Language",
+        "error": "Error",
+        "status_active": "Active",
+        "status_inactive": "Inactive",
+        "loading": "Loading",
+        "saving": "Saving",
+        "topbar": {
+            "calendar": "Calendar",
+            "messages": "Messages",
+            "logout": "Logout",
+            "login": "Login"
+        },
+        "buttons": {
+            "clear": "Clear",
+            "template": "Template",
+            "export": "Export",
+            "import": "Import",
+            "add_new": "Add New",
+            "cancel": "Cancel",
+            "update": "Update",
+            "save": "Save",
+            "back": "Back",
+            "edit": "Edit",
+            "draft_save": "Draft Save",
+            "search": "Search",
+            "delete": "Delete",
+            "confirm": "Confirm"
+        },
+        "import": {
+            "error": "Error",
+            "errors": "Errors",
+            "error_details": "Error Details:",
+            "export_failed": "Export Failed",
+            "export_failed_detail": "An error occurred while generating the export file.",
+            "template_failed": "Template Download Failed",
+            "template_failed_detail": "An error occurred while downloading the template file.",
+            "import_failed": "Import Failed",
+            "import_failed_detail": "The file contained invalid data...",
+            "import_success": "Import Successful",
+            "import_success_detail": "Added {{added}} new, updated {{updated}} existing records.",
+            "generic_error_detail": "An error occurred while importing the file. Please review the details below:",
+            "validation_fallback": "Server rejected the request. Ensure all columns and data types are correct."
+        },
+        "confirm": {
+            "header": "Confirmation",
+            "yes": "YES",
+            "no": "NO"
+        }
+    }
+}

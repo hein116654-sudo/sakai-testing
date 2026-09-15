@@ -1,0 +1,365 @@
+/* You can add global styles to this file, and also import other style files */
+@use './tailwind.css';
+@use './layout/layout.scss';
+@use 'primeicons/primeicons.css';
+@use './demo/demo.scss';
+
+//body.lang-my {
+//    font-family: 'Pyidaungsu', 'Padauk', 'Noto Sans Myanmar', sans-serif !important;
+//
+//    /* 1. Prevent vertical clipping in your custom tables */
+//    .p-datatable .p-datatable-thead > tr > th {
+//        height: auto !important;       /* Allow row to scale for diacritics */
+//        min-height: 28px !important;
+//        padding-top: 4px !important;   /* Subtle padding top/bottom so top marks don't touch border */
+//        padding-bottom: 4px !important;
+//        line-height: 1.5 !important;   /* Overrides base line-heights */
+//    }
+//
+//    .p-datatable .p-datatable-tbody > tr {
+//        height: auto !important;       /* Prevent fixed 25px cutoff */
+//        min-height: 28px !important;
+//        line-height: 1.5 !important;   /* Overrides line-height: 1 */
+//    }
+//
+//    .p-datatable .p-datatable-tbody > tr > td {
+//        line-height: 1.5 !important;
+//    }
+//
+//    /* 2. Safety margins for your SMALL sizes layout to avoid cutoffs */
+//    [app-size="small"] {
+//        &.p-inputtext, .p-inputtext,
+//        &.p-button, .p-button,
+//        &.p-select-label, .p-select-label {
+//            line-height: 1.5 !important;
+//            /* Ensure text sits comfortably with its top/bottom diacritics */
+//            padding-top: 0.35rem !important;
+//            padding-bottom: 0.35rem !important;
+//        }
+//    }
+//}
+
+
+//.p-datatable .p-datatable-thead > tr > th {
+//    background-color: var(--p-primary-color) !important;
+//    --p-datatable-header-cell-background: var(--p-primary-color) !important;
+//    color: white !important;
+//    font-size: 12px;
+//    height: 25px !important;
+//    padding: 0 !important;
+//    text-align: center !important;
+//}
+//
+//.p-datatable .p-datatable-thead > tr > th .p-sortable-column-icon,
+//.p-datatable .p-datatable-thead > tr > th .p-datatable-sort-icon {
+//    color: white !important;
+//}
+
+.p-datatable .p-datatable-thead > tr > th {
+    background-color: var(--p-primary-color) !important;
+    --p-datatable-header-cell-background: var(--p-primary-color) !important;
+
+    /* BLACK only if background is White (l >= 98%), WHITE for any other color */
+    color: oklch(from var(--p-primary-color) calc((0.98 - l) * 1000) 0 0) !important;
+
+    font-size: 12px;
+    height: 25px !important;
+    padding: 0 !important;
+    text-align: center !important;
+    border-bottom: 1px solid var(--p-datatable-border-color, #e2e8f0) !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th .p-sortable-column-icon,
+.p-datatable .p-datatable-thead > tr > th .p-datatable-sort-icon {
+    /* Same rule for icons: Black on white, White everywhere else */
+    color: oklch(from var(--p-primary-color) calc((0.98 - l) * 1000) 0 0) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    background-color: var(--surface-card) !important;
+    font-size: 11px;
+    padding: 0 !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+    height: 25px !important;
+    line-height: 1 !important;
+    font-size: 12px;
+}
+
+.p-datatable-tbody .p-button.p-button-icon-only {
+    width: 20px !important;
+    height: 20px !important;
+    padding: 0 !important;
+}
+
+.p-datatable-tbody .p-button .p-button-icon {
+    font-size: 10px !important;
+}
+
+.p-datatable-thead > tr > th.p-frozen-column {
+    background-color: var(--p-primary-color) !important;
+}
+
+.card-layout-add {
+    min-height: calc(100vh - var(--card-offset, 9rem));
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--surface-card);
+    padding: 1rem 0.5rem 0rem 1rem;
+    margin-bottom: 0;
+    border-radius: var(--content-border-radius);
+}
+
+.card-layout {
+    --card-offset: 9rem;
+    min-height: calc(100vh - var(--card-offset));
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--surface-card);
+    padding: 1rem 1rem 0 1rem;
+    margin-bottom: 0;
+    border-radius: var(--content-border-radius);
+}
+
+.p-datatable .p-datatable-header {
+    padding-left: 0 !important;
+}
+
+.small-switch.p-toggleswitch {
+    width: 2.5rem !important;
+    height: 1rem !important;
+}
+
+/* The sliding circle (handle) */
+.small-switch .p-toggleswitch-handle {
+    width: 0.6rem !important;
+    height: 0.6rem !important;
+    top: 50% !important;
+    margin-top: -0.3rem !important;
+    left: 0.25rem !important;
+}
+
+/* The sliding distance when checked */
+.small-switch.p-toggleswitch-checked .p-toggleswitch-handle {
+    transform: translateX(1.5rem) !important;
+}
+
+/* Optional: Make the "check/uncheck" icons smaller if you use them */
+.small-switch .p-toggleswitch-handle i {
+    font-size: 0.5rem !important;
+}
+
+
+/* SMALL SIZE SYSTEM */
+[app-size="small"] {
+
+    &.p-inputtext, .p-inputtext,
+    &.p-button, .p-button,
+    &.p-select-label, .p-select-label {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        font-size: 0.875rem !important;
+        min-height: 0 !important;
+    }
+
+    /* 2. FIX FOR SEARCH ICON (Left Side) */
+    &.p-iconfield .p-inputtext,
+    .p-iconfield .p-inputtext {
+        padding-left: 2.5rem !important;
+    }
+
+    /* 3. FIX FOR SELECT CLEAR ICON (The "X" on the Right Side) */
+    &.p-select .p-select-label,
+    .p-select .p-select-label {
+        padding-right: 3.8rem !important;
+    }
+
+    /* 4. POSITIONING THE ICONS PERFECTLY */
+    /* Magnifying glass centering */
+    .p-inputicon {
+        left: 0.75rem !important;
+        top: 76% !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Clear Icon ("X") centering */
+    .p-select-clear-icon {
+        right: 2.3rem !important;
+        top: 76% !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Dropdown Arrow box size */
+    .p-select-dropdown {
+        width: 2rem !important;
+    }
+}
+
+.best-selling-widget {
+    --base-font-size: 12px;
+
+    font-size: var(--base-font-size);
+}
+
+/* The sizes below automatically scale relative to the base size */
+.widget-title {
+    font-size: 1.25em; /* 1.25 times the base size (e.g., 18.75px) */
+}
+
+.widget-product {
+    font-size: 1em;    /* Matches the base size exactly (e.g., 15px) */
+}
+
+.widget-meta {
+    font-size: 0.875em; /* 0.875 times the base size (e.g., 13.1px) */
+}
+
+/* MEDIUM SIZE (Base/Default) */
+[app-size="medium"] {
+    &.p-inputtext, .p-inputtext,
+    &.p-button, .p-button,
+    &.p-select-label, .p-select-label {
+        padding: 0.6rem 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    &.p-iconfield .p-inputtext,
+    .p-iconfield .p-inputtext {
+        padding-left: 2.8rem !important;
+    }
+
+    /* 3. FIX FOR SELECT CLEAR ICON (The "X" on the Right Side) */
+    &.p-select .p-select-label,
+    .p-select .p-select-label {
+        padding-right: 3.8rem !important;
+    }
+
+    /* 4. POSITIONING THE ICONS PERFECTLY */
+    .p-inputicon {
+        left: 0.75rem !important;
+        top: 72% !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Clear Icon ("X") centering */
+    .p-select-clear-icon {
+        right: 2.3rem !important;
+        top: 72% !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Dropdown Arrow box size */
+    .p-select-dropdown {
+        width: 2.5rem !important;
+    }
+}
+
+/* 1. Base Styles for the Scroll Container */
+.custom-scrollbar {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 8px;
+}
+
+/* 2. Scrollbar Styling for Chrome, Edge, and Safari */
+
+/* The width of the scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* The Track (The background of the scrollbar) */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--surface-100); /* PrimeNG light mode track */
+    border-radius: 10px;
+}
+
+/* The Handle (The part you drag) */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--surface-400); /* PrimeNG light mode thumb */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--surface-500);
+}
+
+/* 3. DARK MODE OVERRIDES */
+/* This targets the scrollbar when the 'dark' class is active on the HTML/Body */
+:host-context(.dark) .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--surface-800); /* Darker track for dark mode */
+}
+
+:host-context(.dark) .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--surface-500); /* Lighter thumb for contrast */
+}
+
+:host-context(.dark) .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--surface-400);
+}
+
+/* 4. Firefox Support */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--surface-400) var(--surface-100);
+}
+
+:host-context(.dark) .custom-scrollbar {
+    scrollbar-color: var(--surface-500) var(--surface-800);
+}
+
+.p-card {
+    background: var(--surface-card);
+    border-radius: var(--content-border-radius);
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.p-card .p-card-body {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.header-size{
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1rem !important;
+    color: var(--p-primary-color) !important;
+}
+
+.header-size-dashboard{
+    font-size: 1.3rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1rem !important;
+    color: var(--p-primary-color) !important;
+}
+
+.p-blockui {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.custom-green-spinner .p-progress-spinner-circle {
+    stroke: var(--p-primary-color) !important;
+    animation: p-progress-spinner-dash 1.5s ease-in-out infinite !important;
+}
+
+.p-datepicker-input {
+    text-transform: uppercase;
+
+    &::placeholder {
+        text-transform: none;
+    }
+}
