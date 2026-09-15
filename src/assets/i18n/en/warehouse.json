@@ -1,0 +1,72 @@
+{
+    "warehouse": {
+        "type_warehouse": "Warehouse",
+        "type_branch": "Branch",
+        "breadcrumb_list": "Warehouse List",
+        "breadcrumb_add": "Add Warehouse",
+        "breadcrumb_edit": "Edit Warehouse",
+        "placeholder": {
+            "select_type": "Select Type",
+            "select_status": "Select Status"
+        },
+        "columns": {
+            "no": "No.",
+            "code": "Code",
+            "name": "Name",
+            "type": "Type",
+            "manager_id": "ManagerUserId",
+            "location": "Location",
+            "status": "Status",
+            "actions": "Actions"
+        },
+        "empty_message": "No warehouses found.",
+        "messages": {
+            "confirmed": "Success",
+            "status_updated": "Success",
+            "operation_denied": "Error",
+            "delete_success": "Warehouse deleted successfully",
+            "status_update_confirm": "Are you sure you want to change the status of \"{{name}}\" to {{status}}?",
+            "status_updated_detail": "{{name}} is now {{status}}",
+            "delete_confirm": "Do you want to delete \"{{name}}\"?"
+        },
+        "add": {
+            "title_new": "New Warehouse",
+            "title_edit": "Edit Warehouse",
+            "labels": {
+                "name": "Warehouse Name",
+                "type": "Warehouse Type",
+                "region": "Region",
+                "township": "Township",
+                "manager_id": "Manager User ID"
+            },
+            "placeholders": {
+                "name": "Enter warehouse name",
+                "type": "Select Type",
+                "region": "Select Region",
+                "township": "Select Township",
+                "manager_id": "Enter manager user ID"
+            },
+            "messages": {
+                "no_townships": "No townships found",
+                "select_region_first": "Please select a region first",
+                "load_regions_fail": "Failed to load regions",
+                "load_data_fail": "Could not load data",
+                "success": "Success",
+                "create_success": "Warehouse added successfully",
+                "update_success": "Warehouse updated successfully",
+                "operation_fail": "Operation failed"
+            },
+            "validation": {
+                "name_required": "Name is required.",
+                "name_pattern": "Alphanumeric/spaces/dash only.",
+                "name_max": "Maximum 50 characters allowed.",
+                "name_min": "Minimum 2 characters required",
+                "type": "Warehouse type is required.",
+                "region": "Region is required.",
+                "township": "Township is required.",
+                "manager_id": "Manager User Id required.",
+                "no_townships": "There is no Township relate to this Region"
+            }
+        }
+    }
+}

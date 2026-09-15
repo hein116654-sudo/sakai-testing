@@ -1,0 +1,69 @@
+{
+    "location": {
+        "type_zone": "Zone",
+        "type_bin": "Bin",
+        "breadcrumb_list": "Warehouse Locations",
+        "breadcrumb_add": "Add Location",
+        "breadcrumb_edit": "Edit Location",
+        "add": {
+            "title_new": "New Warehouse Location",
+            "title_edit": "Edit Location",
+            "zone_capacity": "Capacity",
+            "labels": {
+                "name": "Location Name",
+                "capacity": "Capacity Quantity",
+                "type": "Location Type",
+                "warehouse": "Warehouses",
+                "parent_zone": "Parent Zone"
+            },
+            "placeholders": {
+                "name": "Enter location name",
+                "capacity": "Enter max capacity",
+                "type": "Select Type",
+                "warehouse": "Select Warehouse",
+                "parent_zone": "Select a Warehouse first"
+            },
+            "validation": {
+                "name_required": "Name is required.",
+                "name_pattern": "Alphanumeric/spaces/dash only.",
+                "name_max": "Maximum 50 characters allowed.",
+                "name_min": "Minimum 2 characters required",
+                "capacity": "Capacity is required and must be a number.",
+                "type": "Type is required.",
+                "warehouse": "Warehouse Branch is required.",
+                "select_warehouse_first": "Please select a Warehouse branch to see available Zones.",
+                "no_zones": "No active Zones found in this warehouse. Create a Zone first.",
+                "bin_requires_zone": "A BIN must be assigned to a Zone."
+            },
+            "messages": {
+                "success": "Success",
+                "create_success": "Location added successfully",
+                "update_success": "Location updated successfully",
+                "load_warehouse_fail": "Failed to load warehouses",
+                "load_zones_fail": "Failed to load zones",
+                "operation_fail": "Operation failed"
+            }
+        },
+        "empty_message": "No locations found.",
+        "placeholder": {
+            "select_type": "Select Type"
+        },
+        "columns": {
+            "no": "No.",
+            "name": "Name",
+            "type": "Type",
+            "parent_locations": "Parent Locations",
+            "warehouse": "Warehouse",
+            "capacity": "Capacity",
+            "status": "Status",
+            "actions": "Actions"
+        },
+        "messages": {
+            "status_update_confirm": "Are you sure you want to change the status of \"{{name}}\" to {{status}}?",
+            "status_updated": "Success",
+            "status_updated_detail": "{{name}} is now {{status}}",
+            "delete_confirm": "Are you sure you want to delete \"{{name}}\"?",
+            "delete_success": "Location deleted successfully"
+        }
+    }
+}
